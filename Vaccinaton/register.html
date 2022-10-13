@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation page</title>
+</head>
+<style>
+
+#regist{
+border: 1px solid black;
+background-color: aqua;
+width: 30%;
+margin: auto;
+
+}
+
+</style>
+<body>
+    <div id="regist">
+    
+<form onsubmit="Register()">
+
+
+
+        <p>
+      unique Id:<input type="number" id="unique"  />
+
+        </p>
+      
+          <p>
+              Name:  <input type="text" id="name" minlength="4"/>
+          </p>
+          <p>
+            Age:  <input type="number" id="Age"  minlength="18" maxlength="40" />
+          </p>
+          <p>
+        
+          <select >
+                <option value="">Employee</option>
+                <option value=""> Student</option>
+          
+          </select>
+        
+          </p>
+          <p>
+            Priority : 
+           <select name="" id="">
+            <option value="">p0</option>
+            <option value="">p1</option>
+            <option value="">p2</option>
+            <option value="">p3</option>
+            </select>
+    
+
+          </p>
+        
+          <p>
+            Vaccine : 
+           <select name="" id="">
+            <option value="Covishield ">Covidshield </option>
+            <option value="Covaxin">Covaxin</option>
+            <option value="Sputnik">Sputnik</option>
+          
+            </select>
+            
+
+          </p>
+      
+
+    
+      </form>
+      
+
+      <button type ="submit" onclick="Register()">Register</button>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+<script>
+ let Details = JSON.parse(localStorage.getItem("Details")) || [];
+
+let queue =["pablo pandey","babu bhaiya","shin chan","jethalal"];
+
+
+
+
+function Register(){
+    let name = document.getElementById("name").value;
+
+queue.push(name);
+
+    let message = '$ {name} your registration is successfull';
+alert(messaage);
+
+
+let mypromise = new Promise (function (resolve,reject){
+setTimeout(function(){
+ if (queue[0]===name){
+     resolve('${name} its your turn now');
+
+ }
+},5000);
+});
+mypromise.then(function(res){
+    console.log("res",res); 
+});
+}
+
+
+function startVaccination(){
+ queue.shift();
+
+ if (queue.length===0){
+     clearInterval(id);
+ }
+ console.log("queue",queue);
+}
+
+let id = setInterval(startVaccination,3000);
+
+
+function Details(){
+      
+      Details.push(arr[0]);
+      localStorage.setItem("cart", JSON.stringify(Details))
+      window.location.href = "./dashboard.html";
+    }
+
+
+
+
+</script>

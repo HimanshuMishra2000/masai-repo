@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+</head>
+<body>
+ <table>
+
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+
+ </table>
+</body>
+</html>
+<script>
+
+    let otp1 = Math.floor((Math.random()+1)*100000);
+        setTimeout(function(){
+            confirm("Your OTP is : " + otp1);
+            let div = document.querySelector("#otpGenerator");
+            div.innerHTML = null;
+            div.innerHTML = otp();
+            document.querySelector("#abb").append(div);
+            document.querySelector("#otpSubmit").addEventListener("click", function(){
+                otpAccept(otp1);
+            });
+        }, 2000)
+   
+function otpAccept(otp){
+    let submitOtp = document.querySelector("#OTP").value;
+    console.log(otp, submitOtp);
+    let tok = Math.floor(Math.random()*17123456783);
+    a.token = tok;
+    if (submitOtp == otp){
+        a.status = ""
+        setTimeout(function(){
+            alert("");
+        }, 2000)
+    }
+  
+    myOrder.push(a);
+    localStorage.setItem("allOrder", JSON.stringify());
+
+</script>
